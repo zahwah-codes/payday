@@ -7,7 +7,7 @@ You can add new invoices, specify item lists, change invoice status, save invoic
 
 ![Screenshot](https://github.com/zahwah-codes/payday/blob/main/payday-screenshot.png)
 
-## Things to Revice 
+## Things to Revise
 
 * Making the design of the app responsive
 
