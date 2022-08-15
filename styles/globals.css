@@ -1,0 +1,540 @@
+/* Fonts */
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url(/fonts/PPNeueMontreal-Book.woff2);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url(/fonts/PPNeueMontreal-Medium.woff2);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Big Caslon';
+  src: url(/fonts/Big\ Caslon\ Medium.woff2);
+}
+
+/* CSS Variables */
+
+:root {
+  --body-bg: #1D1B1D;
+  --primary-color: #FED2A8;
+  --secondary-color: #383638;
+  --paid-status-bg: #E9FBC9;
+  --paid-status-color: #1D1B1D;
+  --pending-status-bg:#D1DAFD;
+  --pending-status-color: #1D1B1D;
+  --draft-status-bg: #F9B8C4;
+  --draft-status-color:#1D1B1D; 
+  --logo-color: #FDEAD8;
+  --main-text: #7E7D7E;
+  --sub-text: white;
+}
+
+/* Base Variables */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'PP Neue Montreal';
+  font-weight: 400;
+  font-size: 16px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body{
+  background: var(--body-bg);
+}
+
+button {
+  border: none;
+  text-transform: capitalize;
+}
+
+p{
+  font-size: 0.9rem;
+  color: var(--main-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+
+.main__container{
+  top:0;
+  position: absolute;
+  left: 15%;
+  width: 80%;
+  padding: 30px 30px;
+}
+
+.pending__status,
+.paid__status,
+.draft__status,
+.edit__btn,
+.delete__btn,
+.mark__as-btn,
+.draft__btn {
+  padding: 10px;
+  width: 80px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.paid__status{
+  background: var(--paid-status-bg);
+  color: var(--paid-status-color);
+}
+
+.pending__status{
+  background: var(--pending-status-bg);
+  color: var(--pending-status-color);
+}
+
+.draft__status{
+  background: var(--draft-status-bg);
+  color: var(--draft-status-color)
+}
+
+
+/* Sidebar */
+
+.sidebar{
+  width: 15%;
+  height: 100vh;
+  background-color: var(--secondary-color) !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.sidebar__container{
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ width: 100%;
+ height: 100%;
+ margin-left: 10px;
+}
+
+.sidebar__logo {
+  display:flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.logo-text {
+  font-family: 'Big Caslon';
+  color: white;
+  margin-left: 10px;
+  font-size: 1.7rem;
+}
+.sidebar__middle {
+  color: var(--main-text);
+}
+
+.sidebar__middle div {
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
+
+.sidebar__middle > :not(:first-child) {
+  margin-left: 20px;
+}
+
+.dashboard-icon {
+  color:#FDEAD8;
+}
+
+.sidebar__dashboard__text {
+  color: white;
+  background: var(--body-bg);
+  padding: 15px 10px 15px 10px;
+  border-radius: 10px;
+  width: 90%;
+  cursor: pointer;
+}
+
+.sidebar__bottom {
+  background: var(--body-bg);
+  border-radius: 10px;
+  padding: 15px 10px 15px 10px;
+  width: 90%;
+  margin-bottom: 20px;
+}
+
+.sidebar__bottom__title {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 50px;
+}
+
+.sidebar__bottom_button {
+  color: var(--body-bg);
+  background: var(--primary-color);
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.sidebar__bottom_button:hover{
+  box-shadow: 0 0.5em 0.5em -0.4em var(--main-text);
+  transform: translateY(-0.25em);
+}
+
+/* Home Page Start */
+
+.invoice__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+
+.invoice__header-logo h3 {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.invoice__add-button {
+  color: var(--body-bg);
+  background: var(--primary-color);
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+}
+
+.invoice__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: var(--secondary-color);
+  border-radius: 0.5rem;
+  margin-bottom: 1.9rem;
+  transition: 1s;
+  color: white;
+  cursor: pointer;
+  margin-left: 50px;
+}
+
+.invoice__item:hover {
+  border: 1px solid var(--primary-color);
+  transform: scaleY(1.02);
+}
+
+.invoice__container {
+  padding-bottom: 200px !important;
+}
+
+
+/* Home Page End */ 
+
+
+/* Invoice Details Style Start */
+
+.back__btn {
+  margin-bottom: 1.9rem;
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: 9%;
+  color: var(--primary-color);
+}
+
+.back__btn h6{
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.details__status {
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+}
+
+.details__status {
+  font-size: 0.8rem !important;
+}
+
+.invoice__details-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  border-radius: 0.5rem;
+  margin-bottom: 1.9rem;
+  background: var(--secondary-color);
+  margin-left: 50px;
+}
+
+.details__btns {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.mark__as-btn{
+  width: 130px;
+  padding: 10px 5px !important; 
+  background-color: var(--primary-color);
+}
+
+.delete__btn {
+  background: var(--body-bg);
+  color: white;
+}
+
+.edit__btn {
+  background: #3E3D3E;
+  color: white;
+}
+
+.invoice__details{
+  background: var(--secondary-color);
+  padding: 30px;
+  border-radius: 10px 10px 0px 0px;
+  margin-left: 50px;
+}
+
+.details__box{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.9rem;
+}
+
+.invoice__details-id {
+  color: white;
+  font-weight: 500;
+}
+
+.invoice__created-date{
+  margin-bottom: 1.9rem;
+}
+
+.invoice__created-date p, .invoice__payment {
+  margin-bottom: 5px;
+}
+
+.invoice__client-address p {
+  margin-bottom: 5px; 
+}
+
+.invoice__client-address h4 {
+  margin-bottom: 10px;
+}
+
+.invoice__item-box {
+  padding: 30px;
+  border-radius: 7px 7px 0px 0px;
+  background: #3E3D3E;
+}
+
+.list {
+  list-style: none;
+}
+
+.list__item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.list__item-box{
+  width: 25%;
+  text-align: right;
+}
+
+.item__name-box{
+  width: 50%;
+}
+
+.grand__total {
+  background: var(--body-bg);
+  padding: 30px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  border-radius: 0px 0px 7px 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.grand__total h2 {
+  font-size: 1.1rem;
+}
+
+/* Invoice Details Style End */
+
+/* Add New Page Style Start */
+
+
+.new__invoice{
+  width: 75%;
+  margin: auto; 
+}
+
+.new__invoice-header{
+  margin-bottom: 1.9rem;
+}
+
+.form__group input {
+  padding: 12px 20px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.form__group {
+  margin-bottom: 1.9rem;
+}
+
+.form__group p {
+  margin-bottom: 10px;
+}
+
+.inline__form-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inline__group {
+  width: 48%;
+}
+
+.item input {
+  width: 90%;
+}
+.new__invoice-body {
+  padding-bottom: 40px;
+}
+
+.bill__title {
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.bill__to {
+  margin-top: 50px;
+}
+
+.invoice__items {
+  margin-top: 70px;
+}
+
+.invoice__items h3 {
+  margin-bottom: 30px;
+  color: var(--primary-color);
+}
+
+.edit__itemlist-btn {
+  margin-top: 20px;
+}
+
+.add__item-btn {
+  width: 100%;
+  background: var(--secondary-color);
+  padding: 12px 25px;
+  border-radius: 50px;
+  border: none;
+  margin-top: 50px;
+  cursor: pointer;
+  outline: none;
+  color: white;
+}
+
+.draft__btn {
+  margin-right: 30px;
+  width: 150px !important;
+}
+
+.new__invoice__btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+
+/* Add New Page Style End */
+
+.disable {
+  cursor: none;
+  pointer-events: none;
+  opacity: 50%;
+}
+
+/* Modal Style */
+
+.delete__modal {
+  background: rgba(9, 10, 17, 0.76);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 330px;
+  padding: 30px;
+  background: var(--secondary-color);
+  z-index: 99999999;
+  border-radius: 5px;
+}
+
+.modal h3 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.modal p {
+  font-size: 0.8rem;
+  line-height: 25px;
+  text-align: center;
+}
+
+.modal__btns {
+  margin-top: 25px;
+  margin-left: 50px;
+}
+
+.modal__btns button:first-child {
+  background: #fff;
+  color: var(--secondary-color);
+}
+
+.showModal {
+  display: block;
+}
