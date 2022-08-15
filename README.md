@@ -16,6 +16,6 @@ You can add new invoices, specify item lists, change invoice status, save invoic
 
 * [NextJS](https://nextjs.org/) - The React framework used for production
 
-* [MongoDB](https://www.mongodb.com/) - The database used to store and retrieve quotes
+* [MongoDB](https://www.mongodb.com/) - The database used to store and receive data
 
 
